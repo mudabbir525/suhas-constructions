@@ -89,7 +89,6 @@
 // export default OngoingProjects;
 
 
-
 import React from 'react';
 import { MapPin, Home, Clock, Check } from 'lucide-react';
 import { projects } from './projects';
