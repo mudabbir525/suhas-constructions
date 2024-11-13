@@ -9,7 +9,7 @@ import ContactUs from './components/ContactUs';
 
 const App = () => {
   return (
-    <Router>
+    <Router> 
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
