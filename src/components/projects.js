@@ -29,7 +29,7 @@ export const projects = [
     name: "Sri Jagannadham Arcade",
     location: "Vibrant Commercial Hub",
     status: "Completed",
-    completion: "August 2023",
+    
     image: "/api/placeholder/800/600",
     brochureUrl: "/path/to/sri-jagannadham-brochure.pdf",
     features: [
