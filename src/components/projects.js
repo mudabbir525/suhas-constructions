@@ -4,7 +4,7 @@ export const projects = [
     location: "Premium City Location",
     status: "Under Construction",
     completion: "December 2024",
-    image: "/api/placeholder/800/600",
+    image: "../assets/u.png",
     brochureUrl: "../assets/urbanite.pdf",
     features: [
       "2 & 3 BHK Luxury Apartments",
