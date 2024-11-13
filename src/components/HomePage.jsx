@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Building2, Users, Award, Clock, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import * as THREE from 'three';
 import { Link } from "react-router-dom";
+import u from "../assets/u.png";
 
 const Homepage = () => {
     const mountRef = useRef(null);
@@ -251,7 +252,7 @@ const Homepage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <img src="/api/placeholder/600/400" alt="Urbanite Residency" className="rounded-lg shadow-lg" />
+               <img src={u} alt="Urbanite Residency" className="rounded-lg shadow-lg" />
             </div>
             <div>
               <h3 className="text-2xl font-bold mb-4">Urbanite Residency</h3>
