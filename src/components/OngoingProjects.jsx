@@ -6,7 +6,7 @@ const OngoingProjects = () => {
 
   useEffect(() => {
     // Fetch project data from a JSON file
-    fetch('/components/projects.json')
+    fetch('./projects.json')
       .then((response) => response.json())
       .then((data) => setProjects(data));
   }, []);
