@@ -5,7 +5,7 @@ export const projects = [
     status: "Under Construction",
     completion: "December 2024",
     image: "/api/placeholder/800/600",
-    brochureUrl: "/path/to/urbanite-brochure.pdf",
+    brochureUrl: "../assets/urbanite.pdf",
     features: [
       "2 & 3 BHK Luxury Apartments",
       "Modern Amenities",
