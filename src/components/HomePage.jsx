@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Building2, Users, Award, Clock, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import * as THREE from 'three';
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
     const mountRef = useRef(null);
@@ -255,10 +256,10 @@ const Homepage = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4">Urbanite Residency</h3>
               <p className="text-gray-600 mb-6">Experience luxury living at its finest with our newest residential project featuring modern amenities and thoughtful design.</p>
-              <a href="/ongoing-projects" className="inline-flex items-center text-blue-600 hover:text-blue-700">
-                Learn More
-                <ArrowRight className="ml-2" />
-              </a>
+            <Link to="/ongoing-projects" className="inline-flex items-center text-blue-600 hover:text-blue-700">
+                      Learn More
+                      <ArrowRight className="ml-2" />
+            </Link>
             </div>
           </div>
         </div>
