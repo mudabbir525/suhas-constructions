@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Homepage from './components/HomePage';
 import OngoingProjects from './components/OngoingProjects';
-import completedProjects from './components/completedProjects';
+import completedProject from './components/completedProject';
 import ContactUs from './components/ContactUs';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/ongoing-projects" element={<OngoingProjects />} />
-            <Route path="/completed-projects" element={<completedProjects />} />
+            <Route path="/completed-projects" element={<completedProject />} />
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </main>
