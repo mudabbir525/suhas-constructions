@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Home, Clock, Check } from 'lucide-react';
+import urbanite from './assets/urbanite.pdf';
 
 const OngoingProjects = () => {
   const projectDetails = {
@@ -63,9 +64,11 @@ const OngoingProjects = () => {
                 </div>
               </div>
 
-              <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-300">
-                Download Brochure
-              </button>
+             <a href={urbanite} download>
+                  <button className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-300">
+                       Download Brochure
+                  </button>
+             </a>
             </div>
           </div>
 
