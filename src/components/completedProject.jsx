@@ -10,7 +10,7 @@ const CompletedProjects = () => {
           <h1 className="text-4xl font-bold mb-4">Completed Projects</h1>
           <p className="text-gray-600">Our latest completed developments</p>
         </div>
-
+ 
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-64 md:h-auto">
