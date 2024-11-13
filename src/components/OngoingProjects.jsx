@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Home, Clock, Check } from 'lucide-react';
-import urbanite from './assets/urbanite.pdf';
+import urbanite from '../assets/urbanite.pdf';
 
 const OngoingProjects = () => {
   const projectDetails = {
