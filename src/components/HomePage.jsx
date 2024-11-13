@@ -199,11 +199,11 @@ const Homepage = () => {
                 <div ref={mountRef} className="absolute inset-0" />
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
                     <div className="text-center text-white px-4">
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6">Luxury Redefined</h1>
-                        <p className="text-xl md:text-2xl mb-8">Experience the pinnacle of modern Indian architecture</p>
-                        <a href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-md hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg">
-                            Book Your Dream Home
-                            <ArrowRight className="ml-2" />
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Building Tomorrow's Landmarks Today</h1>
+                         <p className="text-xl md:text-2xl mb-8">Excellence in Construction & Real Estate Development</p>
+                         <a href="/contact" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300">
+                                   Get Started
+                                    <ArrowRight className="ml-2" />
                         </a>
                     </div>
                 </div>
