@@ -1,12 +1,12 @@
-[
+const projects = [
   {
-    "name": "Urbanite Residency",
-    "location": "Premium City Location",
-    "status": "Under Construction",
-    "completion": "December 2024",
-    "image": "/api/placeholder/800/600",
-    "brochureUrl": "/path/to/urbanite-brochure.pdf",
-    "features": [
+    name: "Urbanite Residency",
+    location: "Premium City Location",
+    status: "Under Construction",
+    completion: "December 2024",
+    image: "/api/placeholder/800/600",
+    brochureUrl: "/path/to/urbanite-brochure.pdf",
+    features: [
       "2 & 3 BHK Luxury Apartments",
       "Modern Amenities",
       "Spacious Layouts",
@@ -16,7 +16,7 @@
       "Fitness Center",
       "Landscaped Gardens"
     ],
-    "specifications": [
+    specifications: [
       "RCC Framed Structure",
       "Vitrified Tile Flooring",
       "Modular Kitchen",
@@ -26,13 +26,13 @@
     ]
   },
   {
-    "name": "Sri Jagannadham Arcade",
-    "location": "Vibrant Commercial Hub",
-    "status": "Completed",
-    "completion": "August 2023",
-    "image": "/api/placeholder/800/600",
-    "brochureUrl": "/path/to/sri-jagannadham-brochure.pdf",
-    "features": [
+    name: "Sri Jagannadham Arcade",
+    location: "Vibrant Commercial Hub",
+    status: "Completed",
+    completion: "August 2023",
+    image: "/api/placeholder/800/600",
+    brochureUrl: "/path/to/sri-jagannadham-brochure.pdf",
+    features: [
       "Retail Spaces",
       "Office Suites",
       "Ample Parking",
@@ -40,7 +40,7 @@
       "Dedicated Security",
       "Centralized Facilities"
     ],
-    "specifications": [
+    specifications: [
       "Reinforced Concrete Structure",
       "Energy-efficient Design",
       "High-speed Elevators",
@@ -48,4 +48,4 @@
       "Smart Building Systems"
     ]
   }
-]
+];
