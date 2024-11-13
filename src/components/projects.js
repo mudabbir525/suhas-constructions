@@ -1,11 +1,15 @@
+import uImage from '../assets/u.png';
+import urbaniteBrochure from '../assets/urbanite.pdf';
+
+
 export const projects = [
   {
     name: "Urbanite Residency",
     location: "Premium City Location",
     status: "Under Construction",
     completion: "December 2024",
-    image: "../assets/u.png",
-    brochureUrl: "../assets/urbanite.pdf",
+    image: uImage,
+    brochureUrl: urbaniteBrochure,
     features: [
       "2 & 3 BHK Luxury Apartments",
       "Modern Amenities",
