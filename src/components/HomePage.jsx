@@ -296,15 +296,15 @@ const Homepage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div className="p-6">
                             <Phone className="mx-auto h-8 w-8 text-blue-600 mb-4" />
-                            <p className="text-gray-600">+91 80 1234 5678</p>
+                            <p className="text-gray-600">+91 83339 36688</p>
                         </div>
                         <div className="p-6">
                             <Mail className="mx-auto h-8 w-8 text-blue-600 mb-4" />
-                            <p className="text-gray-600">info@yourcompany.com</p>
+                            <p className="text-gray-600">srisuhasconstructions@gmail.com</p>
                         </div>
                         <div className="p-6">
                             <MapPin className="mx-auto h-8 w-8 text-blue-600 mb-4" />
-                            <p className="text-gray-600">Bangalore, Karnataka, India</p>
+                            <p className="text-gray-600">Hyderabad, Telangana, India</p>
                         </div>
                     </div>
                 </div>
