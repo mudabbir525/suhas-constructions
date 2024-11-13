@@ -32,10 +32,7 @@ const CompletedProjects = () => {
                   <Home className="mr-2" size={20} />
                   <span>{completedProject.status}</span>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <Clock className="mr-2" size={20} />
-                  <span>Completed: {completedProject.completion}</span>
-                </div>
+                
               </div>
 
               <a href={completedProject.brochureUrl} download>
