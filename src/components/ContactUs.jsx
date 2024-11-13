@@ -75,7 +75,7 @@ const ContactUs = () => {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action="https://formspree.io/f/xyzyjbdw" method="POST"  className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
