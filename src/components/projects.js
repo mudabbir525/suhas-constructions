@@ -1,4 +1,4 @@
-const projects = [
+export const projects = [
   {
     name: "Urbanite Residency",
     location: "Premium City Location",
