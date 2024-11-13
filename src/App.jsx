@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Homepage from './components/HomePage';
 import OngoingProjects from './components/OngoingProjects';
-import completedProject from './components/completedProject';
+import CompletedProjects from './components/CompletedProjects'; // Updated to match the filename
 import ContactUs from './components/ContactUs';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/ongoing-projects" element={<OngoingProjects />} />
-            <Route path="/completed-projects" element={<completedProject />} />
+            <Route path="/completed-projects" element={<CompletedProjects />} /> {/* Updated to match the filename */}
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </main>
