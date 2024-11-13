@@ -241,50 +241,28 @@ const Homepage = () => {
                 </div>
             </div>
 
-            {/* Current Projects */}
-            <div className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: "The Grand Pavilion",
-                                location: "Whitefield, Bangalore",
-                                specs: "3 & 4 BHK Luxury Apartments"
-                            },
-                            {
-                                title: "Sky Terraces",
-                                location: "Electronic City, Bangalore",
-                                specs: "4 & 5 BHK Premium Penthouses"
-                            },
-                            {
-                                title: "Urban Oasis",
-                                location: "Marathahalli, Bangalore",
-                                specs: "3 BHK Smart Homes"
-                            }
-                        ].map((project, index) => (
-                            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                                <img src={`/api/placeholder/400/${300}`} alt={project.title} className="w-full h-48 object-cover" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                    <p className="text-gray-600 mb-4">{project.specs}</p>
-                                    <div className="flex items-center text-gray-500 mb-4">
-                                        <MapPin className="h-4 w-4 mr-2" />
-                                        {project.location}
-                                    </div>
-                                    <a href={`/projects/${index}`} className="inline-flex items-center text-blue-600 hover:text-blue-700">
-                                        View Details
-                                        <ChevronRight className="ml-1 h-4 w-4" />
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            {/* Current Project Highlight */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Featured Project</h2>
+            <p className="text-gray-600">Discover our latest development</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <img src="/api/placeholder/600/400" alt="Urbanite Residency" className="rounded-lg shadow-lg" />
             </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Urbanite Residency</h3>
+              <p className="text-gray-600 mb-6">Experience luxury living at its finest with our newest residential project featuring modern amenities and thoughtful design.</p>
+              <a href="/ongoing-projects" className="inline-flex items-center text-blue-600 hover:text-blue-700">
+                Learn More
+                <ArrowRight className="ml-2" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
             {/* Contact Section */}
             <div className="py-20 bg-gray-50">
