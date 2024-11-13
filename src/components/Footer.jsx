@@ -28,7 +28,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="/" className="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
-              <li><a href="/ongoing-projects" className="text-gray-400 hover:text-white transition-colors duration-300">Ongoing Projects</a></li>
+              <li><a href="/ongoing-projects" className="text-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
               <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors duration-300">Contact Us</a></li>
             </ul>
           </div>
@@ -39,15 +39,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin size={20} />
-                <span>Your Address Here, City, State, PIN</span>
+                <span>Plot No.3, Road No.2, Andhrakeshari Nagar, Vanasthalipuram, Hyd-500 070</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={20} />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 83339 36688</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail size={20} />
-                <span>info@srisuhas.com</span>
+                <span>srisuhasconstructions@gmail.com</span>
               </div>
             </div>
           </div>
