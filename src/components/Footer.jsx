@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">Sri Suhas Constructions</h3>
-            <p className="text-gray-400 mb-4">Building dreams into reality with excellence and integrity since [Year].</p>
+            <p className="text-gray-400 mb-4">Building dreams into reality with excellence and integrity since 2018.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Facebook size={20} />
