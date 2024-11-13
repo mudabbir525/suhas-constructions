@@ -201,7 +201,7 @@ const Homepage = () => {
                     <div className="text-center text-white px-4">
                         <h1 className="text-5xl md:text-7xl font-bold mb-6">Luxury Redefined</h1>
                         <p className="text-xl md:text-2xl mb-8">Experience the pinnacle of modern Indian architecture</p>
-                        <a href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-md hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg">
+                        <a href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-md hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg">
                             Book Your Dream Home
                             <ArrowRight className="ml-2" />
                         </a>
@@ -214,26 +214,26 @@ const Homepage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
-                        <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
+                        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <Building2 className="mx-auto h-12 w-12 text-amber-600 mb-4" />
+                            <Building2 className="mx-auto h-12 w-12 text-blue-600 mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Premium Location</h3>
                             <p className="text-gray-600">Prime locations in the heart of the city</p>
                         </div>
                         <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <Users className="mx-auto h-12 w-12 text-amber-600 mb-4" />
+                            <Users className="mx-auto h-12 w-12 text-blue-600 mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
                             <p className="text-gray-600">50+ years of combined experience</p>
                         </div>
                         <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <Award className="mx-auto h-12 w-12 text-amber-600 mb-4" />
+                            <Award className="mx-auto h-12 w-12 text-blue-600 mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
                             <p className="text-gray-600">IGBC Green Building certified</p>
                         </div>
                         <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <Clock className="mx-auto h-12 w-12 text-amber-600 mb-4" />
+                            <Clock className="mx-auto h-12 w-12 text-blue-600 mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Timely Delivery</h3>
                             <p className="text-gray-600">On-time possession guarantee</p>
                         </div>
@@ -246,7 +246,7 @@ const Homepage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                        <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
+                        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
@@ -275,7 +275,7 @@ const Homepage = () => {
                                         <MapPin className="h-4 w-4 mr-2" />
                                         {project.location}
                                     </div>
-                                    <a href={`/projects/${index}`} className="inline-flex items-center text-amber-600 hover:text-amber-700">
+                                    <a href={`/projects/${index}`} className="inline-flex items-center text-blue-600 hover:text-blue-700">
                                         View Details
                                         <ChevronRight className="ml-1 h-4 w-4" />
                                     </a>
@@ -291,19 +291,19 @@ const Homepage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-                        <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
+                        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div className="p-6">
-                            <Phone className="mx-auto h-8 w-8 text-amber-600 mb-4" />
+                            <Phone className="mx-auto h-8 w-8 text-blue-600 mb-4" />
                             <p className="text-gray-600">+91 80 1234 5678</p>
                         </div>
                         <div className="p-6">
-                            <Mail className="mx-auto h-8 w-8 text-amber-600 mb-4" />
+                            <Mail className="mx-auto h-8 w-8 text-blue-600 mb-4" />
                             <p className="text-gray-600">info@yourcompany.com</p>
                         </div>
                         <div className="p-6">
-                            <MapPin className="mx-auto h-8 w-8 text-amber-600 mb-4" />
+                            <MapPin className="mx-auto h-8 w-8 text-blue-600 mb-4" />
                             <p className="text-gray-600">Bangalore, Karnataka, India</p>
                         </div>
                     </div>
