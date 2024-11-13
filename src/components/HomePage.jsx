@@ -12,15 +12,16 @@ const Homepage = () => {
         
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         mountRef.current.appendChild(renderer.domElement);
 
         // Create building group
         const buildingGroup = new THREE.Group();
 
-        // Main building structure
-        const buildingGeometry = new THREE.BoxGeometry(5, 12, 4);
+        // Main building structure - Core
+        const buildingGeometry = new THREE.BoxGeometry(6, 14, 4);
         const buildingMaterial = new THREE.MeshPhongMaterial({ 
-            color: 0xE8E0D5, // Warm beige color common in modern Indian architecture
+            color: 0xF5F5F5, // Off-white color matching reference
             specular: 0x222222,
             shininess: 30
         });
@@ -29,115 +30,147 @@ const Homepage = () => {
         building.receiveShadow = true;
         buildingGroup.add(building);
 
-        // Add decorative vertical strips
-        const stripGeometry = new THREE.BoxGeometry(0.2, 12, 0.3);
-        const stripMaterial = new THREE.MeshPhongMaterial({ color: 0xB8860B }); // Dark golden accents
-        for (let x = -2; x <= 2; x += 4) {
-            const strip = new THREE.Mesh(stripGeometry, stripMaterial);
-            strip.position.set(x, 0, 2.1);
-            buildingGroup.add(strip);
-        }
+        // Dark accent panels on corners
+        const accentGeometry = new THREE.BoxGeometry(1.5, 14, 4.2);
+        const accentMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0x2C3E50, // Dark blue-gray color from reference
+            specular: 0x444444,
+            shininess: 20
+        });
+        
+        // Left accent
+        const leftAccent = new THREE.Mesh(accentGeometry, accentMaterial);
+        leftAccent.position.x = -2.5;
+        buildingGroup.add(leftAccent);
+        
+        // Right accent
+        const rightAccent = new THREE.Mesh(accentGeometry, accentMaterial);
+        rightAccent.position.x = 2.5;
+        buildingGroup.add(rightAccent);
 
-        // Add floors with decorative elements
-        for (let i = 0; i < 12; i++) {
-            const floorGeometry = new THREE.BoxGeometry(5.4, 0.2, 4.4);
-            const floorMaterial = new THREE.MeshPhongMaterial({ color: 0xB8860B });
+        // Add floors with projecting slabs
+        for (let i = 0; i < 7; i++) {
+            const floorGeometry = new THREE.BoxGeometry(7, 0.3, 4.5);
+            const floorMaterial = new THREE.MeshPhongMaterial({ color: 0xE0E0E0 });
             const floor = new THREE.Mesh(floorGeometry, floorMaterial);
-            floor.position.y = -6 + i * 1;
+            floor.position.y = -7 + i * 2;
+            floor.castShadow = true;
             buildingGroup.add(floor);
         }
 
-        // Add luxury balconies
-        for (let i = 0; i < 11; i++) {
-            // Front balconies with curved design
-            const balconyGeometry = new THREE.BoxGeometry(2, 0.15, 1);
-            const balconyMaterial = new THREE.MeshPhongMaterial({ color: 0xDCDCDC });
-            const balcony = new THREE.Mesh(balconyGeometry, balconyMaterial);
-            balcony.position.set(0, -5.5 + i * 1, 2.5);
-            buildingGroup.add(balcony);
+        // Add modern windows
+        const windowGeometry = new THREE.BoxGeometry(1.2, 1.4, 0.1);
+        const windowMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0x87CEEB,
+            opacity: 0.6,
+            transparent: true,
+            specular: 0xFFFFFF,
+            shininess: 100
+        });
+        const windowFrameMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
 
-            // Glass railings
-            const railingGeometry = new THREE.BoxGeometry(2, 0.8, 0.1);
-            const railingMaterial = new THREE.MeshPhongMaterial({ 
-                color: 0x87CEEB,
-                opacity: 0.4,
-                transparent: true
-            });
-            const railing = new THREE.Mesh(railingGeometry, railingMaterial);
-            railing.position.set(0, -5.1 + i * 1, 2.9);
-            buildingGroup.add(railing);
-        }
-
-        // Add glass windows with modern frames
-        for (let i = 0; i < 11; i++) {
-            for (let j = -1; j <= 1; j += 2) {
+        // Create window pattern
+        for (let floor = 0; floor < 6; floor++) {
+            for (let x = -1.5; x <= 1.5; x += 1.5) {
                 // Window frame
-                const frameGeometry = new THREE.BoxGeometry(1.2, 1, 0.1);
-                const frameMaterial = new THREE.MeshPhongMaterial({ color: 0x4A4A4A });
-                const frame = new THREE.Mesh(frameGeometry, frameMaterial);
-                frame.position.set(j * 1.5, -5.5 + i * 1, 2.1);
+                const frame = new THREE.Mesh(
+                    new THREE.BoxGeometry(1.4, 1.6, 0.2),
+                    windowFrameMaterial
+                );
+                frame.position.set(x, -6.5 + floor * 2, 2.1);
                 buildingGroup.add(frame);
 
-                // Glass
-                const windowGeometry = new THREE.PlaneGeometry(1, 0.8);
-                const windowMaterial = new THREE.MeshPhongMaterial({ 
-                    color: 0x87CEEB,
-                    opacity: 0.6,
-                    transparent: true,
-                    specular: 0xFFFFFF,
-                    shininess: 100
-                });
-                const window = new THREE.Mesh(windowGeometry, windowMaterial);
-                window.position.set(j * 1.5, -5.5 + i * 1, 2.15);
-                buildingGroup.add(window);
+                // Window glass
+                const windowPane = new THREE.Mesh(windowGeometry, windowMaterial);
+                windowPane.position.set(x, -6.5 + floor * 2, 2.15);
+                buildingGroup.add(windowPane);
             }
         }
 
-        // Add grand entrance
-        const entranceGeometry = new THREE.BoxGeometry(2, 2.5, 0.5);
-        const entranceMaterial = new THREE.MeshPhongMaterial({ 
-            color: 0x8B4513,  // Rich wooden color
-            specular: 0x222222,
-            shininess: 30
+        // Add balconies
+        const balconyGeometry = new THREE.BoxGeometry(2, 0.15, 1);
+        const balconyMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
+        const railingMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xFFFFFF,
+            opacity: 0.9,
+            transparent: true 
         });
-        const entrance = new THREE.Mesh(entranceGeometry, entranceMaterial);
-        entrance.position.set(0, -6, 2.2);
-        buildingGroup.add(entrance);
 
-        // Add lighting
-        const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.6);
-        scene.add(ambientLight);
+        for (let floor = 0; floor < 6; floor++) {
+            // Main balcony slab
+            const balcony = new THREE.Mesh(balconyGeometry, balconyMaterial);
+            balcony.position.set(0, -6.5 + floor * 2, 2.5);
+            balcony.castShadow = true;
+            buildingGroup.add(balcony);
 
-        const sunLight = new THREE.DirectionalLight(0xFDB813, 1); // Warm sunlight color
-        sunLight.position.set(10, 15, 10);
-        sunLight.castShadow = true;
-        scene.add(sunLight);
+            // Railing
+            const railing = new THREE.Mesh(
+                new THREE.BoxGeometry(2, 0.8, 0.05),
+                railingMaterial
+            );
+            railing.position.set(0, -6.1 + floor * 2, 2.9);
+            buildingGroup.add(railing);
+        }
 
-        // Ground reflection plane
-        const groundGeometry = new THREE.PlaneGeometry(20, 20);
+        // Add top floor pergola
+        const pergolaGeometry = new THREE.BoxGeometry(5, 0.2, 3);
+        const pergolaMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
+        const pergola = new THREE.Mesh(pergolaGeometry, pergolaMaterial);
+        pergola.position.y = 7.2;
+        buildingGroup.add(pergola);
+
+        // Add pergola supports
+        const supportGeometry = new THREE.BoxGeometry(0.2, 1.5, 0.2);
+        const supportMaterial = new THREE.MeshPhongMaterial({ color: 0x2C3E50 });
+        for (let x = -2; x <= 2; x += 1.3) {
+            for (let z = -1; z <= 1; z += 2) {
+                const support = new THREE.Mesh(supportGeometry, supportMaterial);
+                support.position.set(x, 6.5, z);
+                buildingGroup.add(support);
+            }
+        }
+
+        // Ground plane with shadow receiving
+        const groundGeometry = new THREE.PlaneGeometry(30, 30);
         const groundMaterial = new THREE.MeshPhongMaterial({ 
             color: 0x222222,
             specular: 0x666666,
-            shininess: 30
+            shininess: 10
         });
         const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -6.2;
+        ground.position.y = -7.2;
         ground.receiveShadow = true;
         scene.add(ground);
 
-        // Position the building group
-        buildingGroup.position.y = 2;
+        // Lighting setup
+        const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.6);
+        scene.add(ambientLight);
+
+        const sunLight = new THREE.DirectionalLight(0xFFFFFF, 1);
+        sunLight.position.set(15, 20, 15);
+        sunLight.castShadow = true;
+        sunLight.shadow.mapSize.width = 2048;
+        sunLight.shadow.mapSize.height = 2048;
+        sunLight.shadow.camera.near = 0.5;
+        sunLight.shadow.camera.far = 50;
+        sunLight.shadow.camera.left = -20;
+        sunLight.shadow.camera.right = 20;
+        sunLight.shadow.camera.top = 20;
+        sunLight.shadow.camera.bottom = -20;
+        scene.add(sunLight);
+
+        // Position building and camera
+        buildingGroup.position.y = 0;
         scene.add(buildingGroup);
 
-        // Position camera
-        camera.position.set(8, 5, 12);
+        camera.position.set(12, 8, 16);
         camera.lookAt(0, 0, 0);
 
-        // Animation
+        // Smooth animation
         const animate = () => {
             requestAnimationFrame(animate);
-            buildingGroup.rotation.y += 0.003;
+            buildingGroup.rotation.y += 0.002;
             renderer.render(scene, camera);
         };
         
@@ -157,6 +190,7 @@ const Homepage = () => {
             mountRef.current?.removeChild(renderer.domElement);
         };
     }, []);
+
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
