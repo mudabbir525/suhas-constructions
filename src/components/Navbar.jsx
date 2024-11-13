@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
@@ -29,12 +30,35 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <Link
-                to="/ongoing-projects"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+              <div
+                className="text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+                onMouseEnter={() => setIsProjectsDropdownOpen(true)}
+                onMouseLeave={() => setIsProjectsDropdownOpen(false)}
               >
                 Projects
-              </Link>
+                <ChevronDown
+                  className={`inline-block ml-1 transition-transform duration-300 ${
+                    isProjectsDropdownOpen ? "transform rotate-180" : ""
+                  }`}
+                  size={18}
+                />
+                {isProjectsDropdownOpen && (
+                  <div className="absolute bg-white shadow-md mt-2 rounded-md p-2 w-40">
+                    <Link
+                      to="/ongoing-projects"
+                      className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                    >
+                      Ongoing Projects
+                    </Link>
+                    <Link
+                      to="/completed-projects"
+                      className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                    >
+                      Completed Projects
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link
                 to="/contact"
                 className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
@@ -66,12 +90,34 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/ongoing-projects"
-              className="block px-3 py-2 text-gray-600 hover:text-blue-600"
+            <button
+              className="block px-3 py-2 text-gray-600 hover:text-blue-600 w-full text-left"
+              onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
             >
               Projects
-            </Link>
+              <ChevronDown
+                className={`inline-block ml-1 transition-transform duration-300 ${
+                  isProjectsDropdownOpen ? "transform rotate-180" : ""
+                }`}
+                size={18}
+              />
+            </button>
+            {isProjectsDropdownOpen && (
+              <div className="px-4">
+                <Link
+                  to="/ongoing-projects"
+                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  Ongoing Projects
+                </Link>
+                <Link
+                  to="/completed-projects"
+                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                >
+                  Completed Projects
+                </Link>
+              </div>
+            )}
             <Link
               to="/contact"
               className="block px-3 py-2 text-gray-600 hover:text-blue-600"
