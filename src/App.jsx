@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Homepage from './components/HomePage';
 import OngoingProjects from './components/OngoingProjects';
 import CompletedProjects from './components/CompletedProjects'; 
-import ContactUs from './components/ContactUs';
+import ContactUs from './components/ContactUs'; 
 
 const App = () => {
   return (
