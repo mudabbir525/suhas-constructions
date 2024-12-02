@@ -9,20 +9,20 @@ import ContactUs from './components/ContactUs';
 
 const App = () => {
   return (
-    <Router> 
-      <div className="flex flex-col min-h-screen">
+    // <Router> 
+    //   <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/ongoing-projects" element={<OngoingProjects />} />
-            <Route path="/completed-projects" element={<CompletedProjects />} /> 
-            <Route path="/contact" element={<ContactUs />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    //     <main className="flex-grow">
+    //       <Routes>
+    //         <Route path="/" element={<Homepage />} />
+    //         <Route path="/ongoing-projects" element={<OngoingProjects />} />
+    //         <Route path="/completed-projects" element={<CompletedProjects />} /> 
+    //         <Route path="/contact" element={<ContactUs />} />
+    //       </Routes>
+    //     </main>
+    //     <Footer />
+    //   </div>
+    // </Router>
   );
 };
 
